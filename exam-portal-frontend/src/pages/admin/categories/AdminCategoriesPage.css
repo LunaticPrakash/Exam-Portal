@@ -1,0 +1,32 @@
+.adminCategoriesPage__container {
+    display: flex;
+}
+
+.adminCategoriesPage__sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.adminCategoriesPage__content {
+    width: 70%;
+    height: fit-content;
+    margin: 5px;
+    padding: 8px;
+}
+
+.adminCategoriesPage__content--categoriesList {
+    margin-top: 10px;
+    border-bottom-style: inset;
+    border-right-style: inset;
+    border: 1px solid grey;
+    justify-content: center;
+}
+
+.adminCategoriesPage__content--button {
+    display: block;
+    width: 20%;
+    margin: 20px auto;
+    background-color: rgb(68 177 49);
+    color: white;
+}

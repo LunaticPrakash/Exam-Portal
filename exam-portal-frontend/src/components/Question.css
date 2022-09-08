@@ -1,0 +1,43 @@
+.question__container {
+    width: 100% !important;
+    margin-top: 15px;
+    border-bottom-style: inset;
+    border-right-style: inset;
+    border: 0.5px solid gray;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.question__content {
+    margin: 5px;
+}
+
+.question__options {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.question__options--2 {
+    width: 100%;
+}
+
+.question__options--optionDiv {
+    display: flex;
+    justify-content: flex-start;
+    margin: 5px;
+}
+
+.question__options--optionText {
+    margin-left: 15px;
+    align-self: center;
+}
+
+hr {
+    margin: 1px;
+}
+
+.question__content--editButtons {
+    display: flex;
+    margin: 2px;
+    padding: 2px;
+}

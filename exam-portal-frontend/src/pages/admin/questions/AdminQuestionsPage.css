@@ -1,0 +1,23 @@
+.adminQuestionsPage__container {
+    display: flex;
+}
+
+.adminQuestionsPage__sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.adminQuestionsPage__content {
+    width: 70%;
+    height: fit-content;
+    padding: 8px;
+}
+
+.adminQuestionsPage__content--button {
+    display: block;
+    width: 20%;
+    margin: 20px auto;
+    background-color: rgb(68 177 49);
+    color: white;
+}

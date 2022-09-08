@@ -1,0 +1,25 @@
+.adminProfilePage__container {
+    display: flex;
+}
+
+.adminProfilePage__sidebar {
+    position: sticky;
+    top: 0;
+}
+
+.adminProfilePage__content {
+    text-align: center;
+    width: 80%;
+    height: fit-content;
+    margin: 0px auto;
+}
+
+.adminProfilePage__content--profilePic {
+    border: 2px solid rgb(68 177 49);
+}
+
+.adminProfilePage__content--table {
+    border: 1px solid gray;
+    width: 50%;
+    margin: 20px auto;
+}
