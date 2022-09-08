@@ -4,6 +4,9 @@ This is a webapp built using Spring-boot and ReactJS that provides functionality
 ## Note:-
 Admin Module is completed. User Module is in progress...
 
+- Backend API Endpoints<br>
+<img src="Output/backendAPIEndpoints.png" alt=" Backend API Endpoints" width="60%" height="60%" >
+
 ## Output :-
 
 - Login Page<br>
