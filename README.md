@@ -21,8 +21,20 @@ Admin Module is completed. User Module is in progress...
 - Admin Add Category Page<br>
 <img src="Output/adminAddCategoryPage.png" alt="Admin Add Category Page" width="60%" height="55%" >
 
-- Admin Update Category Page<br>
-<img src="Output/adminUpdateCategoryPage.png" alt="Admin Update Category Page" width="60%" height="55%" >
+- Admin Quizzes Page<br>
+<img src="Output/adminQuizzesPage.png" alt="Admin Update Category Page" width="60%" height="55%" >
 
-- Admin Delete Category Alert<br>
-<img src="Output/adminDelete Category Alert.png" alt="Admin Delete Category Alert" width="60%" height="55%" >
+- Admin Add Quiz Page<br>
+<img src="Output/adminAddQuizPage.png" alt="Admin Update Category Page" width="60%" height="55%" >
+
+- Admin Delete Quiz Confirmation Alert<br>
+<img src="Output/adminDeleteQuizAlertConfirmationAlert.png" alt="Admin Update Category Page" width="60%" height="55%" >
+
+- Admin Delete Quiz Alert<br>
+<img src="Output/adminDeleteQuizAlert.png" alt="Admin Update Category Page" width="60%" height="55%" >
+
+- Admin Questions Page<br>
+<img src="Output/adminQuestionsPage.png" alt="Admin Update Category Page" width="60%" height="55%" >
+
+- Admin Add Question Alert<br>
+<img src="Output/adminAddQuestionAlert.png" alt="Admin Update Category Page" width="60%" height="55%" >
