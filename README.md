@@ -48,5 +48,8 @@ This is a webapp built using Spring-boot and ReactJS that provides functionality
 - User Category-wise Quizzes Page<br>
 <img src="Output/userQuizByCategory.png" alt="User Category-wise Quizzes Page" width="100%" height="100%" >
 
+- User Quiz Manual Page<br>
+<img src="Output/quizManualPage.png" alt="User Quiz Manual Page" width="100%" height="100%" >
+
 - User Report Card Page<br>
 <img src="Output/userReportCard.png" alt="User Report Card Page" width="100%" height="100%" >
