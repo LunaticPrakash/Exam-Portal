@@ -62,6 +62,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.PUT, "/api/question/**").hasAuthority("ADMIN")
                 .antMatchers(HttpMethod.DELETE, "/api/question/**").hasAuthority("ADMIN")
 
+                .antMatchers(HttpMethod.POST, "/api/quizResult/**").hasAuthority("USER")
+                .antMatchers(HttpMethod.GET, "/api/quizResult/**").hasAuthority("USER")
+
                 .anyRequest().denyAll()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

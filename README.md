@@ -41,3 +41,15 @@ Admin Module is completed. User Module is in progress...
 
 - Admin Add Question Alert<br>
 <img src="Output/adminAddQuestionAlert.png" alt="Admin Update Category Page" width="60%" height="55%" >
+
+- User Profile Page<br>
+<img src="Output/userProfile.png" alt="User Profile Page" width="60%" height="55%" >
+
+- User All Quizzes Page<br>
+<img src="Output/userAllQuizzes.png" alt="User All Quizzes Page" width="60%" height="55%" >
+
+- User Category-wise Quizzes Page<br>
+<img src="Output/userQuizByCategory.png" alt="User Category-wise Quizzes Page" width="60%" height="55%" >
+
+- User Report Card Page<br>
+<img src="Output/userReportCard.png" alt="User Report Card Page" width="60%" height="55%" >

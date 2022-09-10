@@ -120,6 +120,7 @@ const AdminCategoriesPage = () => {
                           textAlign: "center",
                           color: "rgb(68 177 49)",
                           fontWeight: "500",
+                          cursor:"pointer"
                         }}
                       >{`Update`}</div>
 
@@ -130,6 +131,7 @@ const AdminCategoriesPage = () => {
                           textAlign: "center",
                           color: "red",
                           fontWeight: "500",
+                          cursor:"pointer"
                         }}
                       >{`Delete`}</div>
                     </div>

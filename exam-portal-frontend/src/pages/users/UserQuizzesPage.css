@@ -1,0 +1,37 @@
+.userQuizzesPage__container {
+    display: flex;
+}
+
+.userQuizzesPage__sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.userQuizzesPage__content {
+    text-align: center;
+    width: 100%;
+    height: fit-content;
+    margin: 0px auto;
+}
+
+.userQuizzesPage__content--ButtonsList {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-end;
+    margin: 0px;
+    justify-content: space-around;
+}
+
+.userQuizzesPage__content--Button {
+    border: 1px solid grey;
+    width: 6.1em !important;
+    height: 35px;
+    padding: 0px !important;
+    margin: 3px !important;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(68 177 49);
+    margin: 0px 4px;
+}

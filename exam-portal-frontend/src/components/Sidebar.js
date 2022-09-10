@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaTh, FaBars, FaUserAlt, FaRegChartBar } from "react-icons/fa";
+import { FaBars, FaUserAlt, FaRegChartBar } from "react-icons/fa";
 import { TbLayoutGrid, TbLayoutGridAdd } from "react-icons/tb";
 import { MdQuiz, MdQueue } from "react-icons/md";
 import { NavLink } from "react-router-dom";

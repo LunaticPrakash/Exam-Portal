@@ -1,0 +1,23 @@
+.userQuizResultPage__container {
+    display: flex;
+}
+
+.userQuizResultPage__sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.userQuizResultPage__content {
+    width: 90%;
+    height: fit-content;
+    margin: 10px auto;
+}
+
+
+.userQuizResultPage__content--table {
+    border: 1px solid gray;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}

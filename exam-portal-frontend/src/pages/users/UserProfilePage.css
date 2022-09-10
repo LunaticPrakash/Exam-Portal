@@ -1,0 +1,26 @@
+.userProfilePage__container {
+    display: flex;
+}
+
+.userProfilePage__sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.userProfilePage__content {
+    text-align: center;
+    width: 80%;
+    height: fit-content;
+    margin: 0px auto;
+}
+
+.userProfilePage__content--profilePic {
+    border: 2px solid rgb(68 177 49);
+}
+
+.userProfilePage__content--table {
+    border: 1px solid gray;
+    width: 50%;
+    margin: 20px auto;
+}

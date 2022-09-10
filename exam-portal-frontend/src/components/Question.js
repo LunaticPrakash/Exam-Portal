@@ -7,7 +7,7 @@ import { deleteQuestion } from "../actions/questionsActions";
 import swal from "sweetalert";
 import * as questionsConstants from "../constants/questionsConstants";
 
-const Question = ({ number, answers, question }) => {
+const Question = ({ number, answers, question, isAdmin = false }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const answer = question.answer;
@@ -56,14 +56,13 @@ const Question = ({ number, answers, question }) => {
         <InputGroup
           onChange={(e) => {
             answers[question.quesId] = e.target.value;
-            console.log(answers);
           }}
         >
           <div className="question__options--2">
             <div className="question__options--optionDiv">
               <InputGroup.Radio
                 value={"option1"}
-                name="test"
+                name={number}
                 aria-label="option 1"
               />
               <span className="question__options--optionText">
@@ -73,7 +72,7 @@ const Question = ({ number, answers, question }) => {
             <div className="question__options--optionDiv">
               <InputGroup.Radio
                 value={"option2"}
-                name="test"
+                name={number}
                 aria-label="option 2"
               />
               <span className="question__options--optionText">
@@ -86,7 +85,7 @@ const Question = ({ number, answers, question }) => {
             <div className="question__options--optionDiv">
               <InputGroup.Radio
                 value={"option3"}
-                name="test"
+                name={number}
                 aria-label="option 3"
               />
               <span className="question__options--optionText">
@@ -96,8 +95,8 @@ const Question = ({ number, answers, question }) => {
             <div className="question__options--optionDiv">
               <InputGroup.Radio
                 value={"option4"}
-                name="test"
-                aria-label="Radio 1"
+                name={number}
+                aria-label="option 4"
               />
               <span className="question__options--optionText">
                 {question.option4}
@@ -106,29 +105,37 @@ const Question = ({ number, answers, question }) => {
           </div>
         </InputGroup>
       </div>
-      <p style={{ margin: "5px" }}>{`Correct Answer: ${question[answer]}`}</p>
-      <hr />
-      <div className="question__content--editButtons">
-        <div
-          onClick={() => updateQuestionHandler(question)}
-          style={{
-            margin: "2px 8px",
-            textAlign: "center",
-            color: "rgb(68 177 49)",
-            fontWeight: "500",
-          }}
-        >{`Update`}</div>
+      {isAdmin && (
+        <div>
+          <p
+            style={{ margin: "5px" }}
+          >{`Correct Answer: ${question[answer]}`}</p>
+          <hr />
+          <div className="question__content--editButtons">
+            <div
+              onClick={() => updateQuestionHandler(question)}
+              style={{
+                margin: "2px 8px",
+                textAlign: "center",
+                color: "rgb(68 177 49)",
+                fontWeight: "500",
+                cursor: "pointer",
+              }}
+            >{`Update`}</div>
 
-        <div
-          onClick={() => deleteQuestionHandler(question)}
-          style={{
-            margin: "2px 8px",
-            textAlign: "center",
-            color: "red",
-            fontWeight: "500",
-          }}
-        >{`Delete`}</div>
-      </div>
+            <div
+              onClick={() => deleteQuestionHandler(question)}
+              style={{
+                margin: "2px 8px",
+                textAlign: "center",
+                color: "red",
+                fontWeight: "500",
+                cursor: "pointer",
+              }}
+            >{`Delete`}</div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,0 +1,32 @@
+.quizManualPage__container {
+    display: flex;
+}
+
+.quizManualPage__sidebar {
+    flex: 0.01;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.quizManualPage__content {
+    width: 80%;
+    height: fit-content;
+    margin: 0px auto;
+}
+
+.quizManualPage__content--section {
+    line-height: 1px;
+    margin-bottom: 28px;
+}
+
+hr{
+    margin: 10px;
+}
+
+.quizManualPage__content--button {
+    margin: 30px auto;
+    display: block;
+    color: white;
+    background-color: rgb(68 177 49);
+}

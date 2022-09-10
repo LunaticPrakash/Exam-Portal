@@ -42,4 +42,7 @@ public class Quiz {
     @JsonIgnore
     private List<Question> questions = new ArrayList<>();
 
+    @OneToMany(mappedBy = "quiz", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<QuizResult> quizResults = new ArrayList<>();
 }

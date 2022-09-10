@@ -7,13 +7,17 @@ import AdminUpdateCategoryPage from "./pages/admin/categories/AdminUpdateCategor
 import AdminProfilePage from "./pages/admin/AdminProfilePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
-import HomePage from "./pages/users/HomePage";
 import AdminQuizzesPage from "./pages/admin/quizzes/AdminQuizzesPage";
 import AdminAddQuiz from "./pages/admin/quizzes/AdminAddQuiz";
 import AdminUpdateQuiz from "./pages/admin/quizzes/AdminUpdateQuiz";
 import AdminQuestionsPage from "./pages/admin/questions/AdminQuestionsPage";
 import AdminAddQuestionsPage from "./pages/admin/questions/AdminAddQuestionsPage";
 import AdminUpdateQuestionPage from "./pages/admin/questions/AdminUpdateQuestionPage";
+import UserProfilePage from "./pages/users/UserProfilePage";
+import UserQuizzesPage from "./pages/users/UserQuizzesPage";
+import UserQuizManualPage from "./pages/users/UserQuizManualPage";
+import UserQuestionsPage from "./pages/users/UserQuestionsPage";
+import UserQuizResultPage from "./pages/users/UserQuizResultPage";
 
 const App = () => {
   return (
@@ -39,6 +43,12 @@ const App = () => {
           path="/adminUpdateQuestion/:quesId"
           element={<AdminUpdateQuestionPage />}
         />
+        <Route path="/profile" element={<UserProfilePage />} />
+        <Route path="/quizzes" element={<UserQuizzesPage />} />
+        <Route path="/quiz/*" element={<UserQuizzesPage />} />
+        <Route path="/quizManual/" element={<UserQuizManualPage />} />
+        <Route path="/questions/" element={<UserQuestionsPage />} />
+        <Route path="/quizResults/" element={<UserQuizResultPage />} />
       </Routes>
     </Router>
   );

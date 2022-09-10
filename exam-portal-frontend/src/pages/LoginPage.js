@@ -13,6 +13,8 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [passwordType, setPasswordType] = useState("password");
+  const token = JSON.parse(localStorage.getItem("jwtToken"));
+  const user = JSON.parse(localStorage.getItem("user"));
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -36,7 +38,7 @@ const LoginPage = () => {
           if (r["roleName"] === "ADMIN") {
             return navigate("/adminProfile");
           } else {
-            return navigate("/adminProfile");
+            return navigate("/profile");
           }
         });
       }
@@ -44,9 +46,13 @@ const LoginPage = () => {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("jwtToken")) navigate("/");
-  }, [navigate]);
-
+    if (token && user) {
+      user.roles.map((r) => {
+        if (r["roleName"] === "ADMIN") return navigate("/adminProfile");
+        else return navigate("/profile");
+      });
+    }
+  }, []);
   return (
     <FormContainer>
       <h1>Sign In</h1>
@@ -84,7 +90,12 @@ const LoginPage = () => {
           </InputGroup>
         </Form.Group>
 
-        <Button variant="" className="my-3" type="submit" style={{backgroundColor:"rgb(68 177 49)", color:"white"}}>
+        <Button
+          variant=""
+          className="my-3"
+          type="submit"
+          style={{ backgroundColor: "rgb(68 177 49)", color: "white" }}
+        >
           Login
         </Button>
       </Form>
@@ -94,7 +105,10 @@ const LoginPage = () => {
       ) : (
         <Row className="py-3">
           <Col>
-            New Customer? <Link to="/register" style={{color:"rgb(68 177 49)"}}>Register</Link>
+            New Customer?{" "}
+            <Link to="/register" style={{ color: "rgb(68 177 49)" }}>
+              Register
+            </Link>
           </Col>
         </Row>
       )}

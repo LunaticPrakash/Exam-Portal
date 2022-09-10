@@ -4,6 +4,7 @@ import thunk from "redux-thunk";
 import { loginReducer, registerReducer } from "./reducers/authReducer";
 import { categoriesReducer } from "./reducers/categoriesReducer";
 import { questionsReducer } from "./reducers/questionsReducer";
+import { quizResultReducer } from "./reducers/quizResultReducer";
 import { quizzesReducer } from "./reducers/quizzesReducer";
 
 const reducer = combineReducers({
@@ -12,6 +13,7 @@ const reducer = combineReducers({
   categoriesReducer: categoriesReducer,
   quizzesReducer: quizzesReducer,
   questionsReducer: questionsReducer,
+  quizResultReducer: quizResultReducer,
 });
 
 const middleware = [thunk];

@@ -55,6 +55,7 @@ const AdminQuestionsPage = () => {
                 number={index + 1}
                 answers={answers}
                 question={q}
+                isAdmin={true}
               />
             );
           })
