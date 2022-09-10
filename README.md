@@ -10,7 +10,7 @@ This is a webapp built using Spring-boot and ReactJS that provides functionality
 <img src="Output/loginPage.png" alt="Login Page" width="60%" height="55%" >
 
 - Registration Page<br>
-<img src="Output/registrationPage.png" alt="Registration Page" width="60%" height="55%" >
+<img src="Output/registrationPage.png" alt="Registration Page" width="100%" height="auto" >
 
 - Admin Profle Page<br>
 <img src="Output/adminProflePage.png" alt="Admin Profle Page" width="60%" height="55%" >
