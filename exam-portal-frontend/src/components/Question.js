@@ -56,6 +56,7 @@ const Question = ({ number, answers, question, isAdmin = false }) => {
         <InputGroup
           onChange={(e) => {
             answers[question.quesId] = e.target.value;
+            console.log(answers);
           }}
         >
           <div className="question__options--2">
