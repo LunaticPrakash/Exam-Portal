@@ -55,8 +55,15 @@ const Question = ({ number, answers, question, isAdmin = false }) => {
       <div className="question__options">
         <InputGroup
           onChange={(e) => {
-            answers[question.quesId] = e.target.value;
-            console.log(answers);
+            const newAns = {};
+            newAns[question.quesId] = e.target.value;
+            let answers = JSON.parse(localStorage.getItem("answers"));
+            if (answers) {
+              answers[question.quesId] = e.target.value;
+              localStorage.setItem("answers", JSON.stringify(answers));
+            } else {
+              localStorage.setItem("answers", JSON.stringify(newAns));
+            }
           }}
         >
           <div className="question__options--2">

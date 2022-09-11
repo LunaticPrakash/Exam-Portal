@@ -9,15 +9,34 @@
 }
 
 .userQuestionsPage__content {
-    width: 70%;
+    width: 100%;
     height: fit-content;
     padding: 8px;
 }
 
+
+.userQuestionsPage__content--options {
+    display: flex;
+    text-align: center;
+    width: 100%;
+}
+
 .userQuestionsPage__content--button {
-    display: block;
+    display: inline-block;
     width: 20%;
+    height: 2.5em;
     margin: 20px auto;
     background-color: rgb(68 177 49);
     color: white;
+    justify-content: flex-start;
+}
+
+.userQuestionsPage__content--spinner{
+    border: 1px solid grey;
+    border-radius: 10px;
+    border-bottom-style: inset;
+    height: 150px;
+    display: inline-block;
+    width: 20%;
+    justify-content: flex-end;
 }

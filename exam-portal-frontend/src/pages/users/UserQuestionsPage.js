@@ -10,14 +10,18 @@ import swal from "sweetalert";
 import * as quizResultConstants from "../../constants/quizResultConstants";
 import { submitQuiz } from "../../actions/quizResultActions";
 import { fetchQuizzes } from "../../actions/quizzesActions";
+import ReactSpinnerTimer from "react-spinner-timer";
 
 const UserQuestionsPage = () => {
+  Number.prototype.zeroPad = function () {
+    return ("0" + this).slice(-2);
+  };
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const urlParams = new URLSearchParams(window.location.search);
   const quizId = urlParams.get("quizId");
   const quizTitle = urlParams.get("quizTitle");
-
   const quizzesReducer = useSelector((state) => state.quizzesReducer);
   const [quizzes, setQuizzes] = useState(quizzesReducer.quizzes);
   const [quiz, setQuiz] = useState(
@@ -28,26 +32,28 @@ const UserQuestionsPage = () => {
   const token = JSON.parse(localStorage.getItem("jwtToken"));
   const user = JSON.parse(localStorage.getItem("user"));
   const userId = user ? user.userId : null;
-
+  const [timeRemaining, setTimeRemaining] = useState(questions.length * 1 * 60);
   let answers = {};
-  let timoutId = null;
+  let intervalId = null;
+
   useEffect(() => {
-    console.log("Timer Started!");
-    timoutId = setTimeout(() => {
-      console.log("Timer Finished!");
-      submitQuizHandler(answers, true);
-    }, 10000);
+    intervalId = setInterval(() => {
+      if (timeRemaining <= 0) {
+        submitQuizHandler(answers, true);
+      } else {
+        setTimeRemaining((prev) => prev - 1);
+      }
+    }, 1000);
 
     return () => {
-      console.log("Timer Finished!");
-      clearTimeout(timoutId);
-      timoutId = null;
+      clearInterval(intervalId);
+      intervalId = null;
     };
   }, []);
 
-  const submitQuizHandler = (answers, isTimesUp = false) => {
+  const submitQuizHandler = (isTimesUp = false) => {
+    const answers = JSON.parse(localStorage.getItem("answers"));
     if (isTimesUp) {
-      console.log(answers);
       submitQuiz(dispatch, userId, quizId, answers, token).then((data) => {
         if (data.type === quizResultConstants.ADD_QUIZ_RESULT_SUCCESS) {
           swal(
@@ -94,8 +100,9 @@ const UserQuestionsPage = () => {
         }
       });
     }
-    clearTimeout(timoutId);
-    timoutId = null;
+    console.log("Clearing Interval");
+    clearInterval(intervalId);
+    intervalId = null;
   };
 
   useEffect(() => {
@@ -113,31 +120,42 @@ const UserQuestionsPage = () => {
   }, []);
 
   useEffect(() => {
-    fetchQuestionsByQuiz(dispatch, quizId, token).then((data) =>
-      setQuestions(data.payload)
-    );
+    fetchQuestionsByQuiz(dispatch, quizId, token).then((data) => {
+      setQuestions(data.payload);
+      setTimeRemaining(data.payload.length * 1 * 60);
+    });
   }, []);
 
   return (
     <div className="userQuestionsPage__container">
       <div className="userQuestionsPage__content">
         <h2>{`Questions : ${quizTitle}`}</h2>
-        <Button
-          className="userQuestionsPage__content--button"
-          onClick={()=>submitQuizHandler(answers)}
-        >
-          Submit Quiz
-        </Button>
+        <div className="userQuestionsPage__content--options">
+          <Button
+            className="userQuestionsPage__content--button"
+            onClick={() => submitQuizHandler()}
+          >
+            Submit Quiz
+          </Button>
+          <div className="userQuestionsPage__content--spinner">
+            <ReactSpinnerTimer
+              timeInSeconds={questions.length * 1 * 60}
+              totalLaps={questions.length * 1 * 60}
+              onLapInteraction={() => {
+                submitQuizHandler(true);
+              }}
+              isRefresh={false}
+              isPause={false}
+            />
+            <h4 style={{ marginTop: "18px" }}>{`${parseInt(
+              timeRemaining / 60
+            ).zeroPad()} : ${(timeRemaining % 60).zeroPad()}`}</h4>
+            Timer
+          </div>
+        </div>
         {questions ? (
           questions.map((q, index) => {
-            return (
-              <Question
-                key={index}
-                number={index + 1}
-                answers={answers}
-                question={q}
-              />
-            );
+            return <Question key={index} number={index + 1} question={q} />;
           })
         ) : (
           <Loader />
