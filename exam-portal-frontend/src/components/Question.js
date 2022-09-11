@@ -13,6 +13,17 @@ const Question = ({ number, answers, question, isAdmin = false }) => {
   const answer = question.answer;
   const token = JSON.parse(localStorage.getItem("jwtToken"));
 
+  const saveAnswer = (quesId, ans) => {
+    const newAns = {};
+    newAns[quesId] = ans;
+    let answers = JSON.parse(localStorage.getItem("answers"));
+    if (answers) {
+      answers[quesId] = ans;
+      localStorage.setItem("answers", JSON.stringify(answers));
+    } else {
+      localStorage.setItem("answers", JSON.stringify(newAns));
+    }
+  };
   const updateQuestionHandler = (ques) => {
     navigate(`/adminUpdateQuestion/${ques.quesId}/?quizId=${ques.quiz.quizId}`);
   };
@@ -55,15 +66,8 @@ const Question = ({ number, answers, question, isAdmin = false }) => {
       <div className="question__options">
         <InputGroup
           onChange={(e) => {
-            const newAns = {};
-            newAns[question.quesId] = e.target.value;
-            let answers = JSON.parse(localStorage.getItem("answers"));
-            if (answers) {
-              answers[question.quesId] = e.target.value;
-              localStorage.setItem("answers", JSON.stringify(answers));
-            } else {
-              localStorage.setItem("answers", JSON.stringify(newAns));
-            }
+            saveAnswer(question.quesId, e.target.value);
+
           }}
         >
           <div className="question__options--2">
