@@ -11,7 +11,7 @@ This is a webapp built using Spring-boot and ReactJS that provides functionality
   <img src="Output/loginPage.png" alt="Login Page" width="100%" height="100%" >
 
 - Registration Page<br>
-  <img src="Output/registrationPage.png" alt="Registration Page" width="100%" height="100%" >
+  <img src="Output/registrationPage.png" alt="Registration Page" >
 
 - Admin Profle Page<br>
   <img src="Output/adminProflePage.png" alt="Admin Profle Page" width="100%" height="100%" >
