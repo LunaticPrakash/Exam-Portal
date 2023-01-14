@@ -11,7 +11,7 @@ This is a webapp built using Spring-boot and ReactJS that provides functionality
   <img src="https://user-images.githubusercontent.com/56812557/212474247-3bc34abe-d974-4031-a511-20f5b65aa6ee.png" alt="Login Page" width="100%" height="100%" >
 
 - Registration Page<br>
-  <img src="(https://user-images.githubusercontent.com/56812557/212474250-2a6f7ce8-b7bd-4055-9e72-a18eb08d5ce0.png" alt="Registration Page" width="100%" height="100%" >
+  <img src="https://user-images.githubusercontent.com/56812557/212474250-2a6f7ce8-b7bd-4055-9e72-a18eb08d5ce0.png" alt="Registration Page" width="100%" height="100%" >
 
 - Admin Profile Page<br>
   <img src="https://user-images.githubusercontent.com/56812557/212474267-5e11c20a-f94b-402c-9f0c-4ca0a6bdbe09.png" alt="Admin Profile Page" width="100%" height="100%" >
@@ -20,7 +20,7 @@ This is a webapp built using Spring-boot and ReactJS that provides functionality
   <img src="https://user-images.githubusercontent.com/56812557/212474263-e467df05-fe4c-42bf-9ee9-bd905afdf88f.png" alt="Admin Categories Page" width="100%" height="100%" >
 
 - Admin Add Category Page<br>
-  <img src="(https://user-images.githubusercontent.com/56812557/212474259-a9340fe9-0be2-43fc-b695-41412beda838.png" alt="Admin Add Category Page" width="100%" height="100%" >
+  <img src="https://user-images.githubusercontent.com/56812557/212474259-a9340fe9-0be2-43fc-b695-41412beda838.png" alt="Admin Add Category Page" width="100%" height="100%" >
 
 - Admin Quizzes Page<br>
   <img src="https://user-images.githubusercontent.com/56812557/212474270-0769908e-5d4e-4c75-be0e-b2ddb7f9d210.png" alt="Admin Quizzes Page" width="100%" height="100%" >
