@@ -46,7 +46,7 @@ This is a webapp built using Spring-boot and ReactJS that provides functionality
 - User All Quizzes Page<br>
   <img src="https://user-images.githubusercontent.com/56812557/212474251-8811d8ed-408a-4ac5-bb70-f009ba5d37e8.png" alt="User All Quizzes Page" width="100%" height="100%" >
 
-- User Category-wise Quizzes Page<br>
+- User Category wise Quizzes Page<br>
   <img src="https://user-images.githubusercontent.com/56812557/212474254-352d2719-ebb3-4419-91a5-db37d72f48c1.png" alt="User Category-wise Quizzes Page" width="100%" height="100%" >
 
 - User Question Page<br>
