@@ -1,17 +1,18 @@
 package com.lunatic.examportalbackend.models;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Getter
-@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString
+@Setter
+@Getter
+@Builder
 @Entity
 @Table(name = "roles")
 public class Role {
