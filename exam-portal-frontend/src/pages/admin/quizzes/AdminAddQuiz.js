@@ -40,8 +40,6 @@ const AdminAddQuiz = () => {
       const quiz = {
         title: title,
         description: description,
-        maxMarks: maxMarks,
-        numberOfQuestions: numberOfQuestions,
         isActive: isActive,
         category: {
           catId: selectedCategoryId,
@@ -113,7 +111,7 @@ const AdminAddQuiz = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group className="my-3" controlId="maxMarks">
+            {/* <Form.Group className="my-3" controlId="maxMarks">
               <Form.Label>Maximum Marks</Form.Label>
               <Form.Control
                 type="number"
@@ -123,9 +121,9 @@ const AdminAddQuiz = () => {
                   setMaxMarks(e.target.value);
                 }}
               ></Form.Control>
-            </Form.Group>
+            </Form.Group> */}
 
-            <Form.Group className="my-3" controlId="numberOfQuestions">
+            {/* <Form.Group className="my-3" controlId="numberOfQuestions">
               <Form.Label>Number of Questions</Form.Label>
               <Form.Control
                 type="number"
@@ -135,7 +133,7 @@ const AdminAddQuiz = () => {
                   setNumberOfQuestions(e.target.value);
                 }}
               ></Form.Control>
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Check
               className="my-3"

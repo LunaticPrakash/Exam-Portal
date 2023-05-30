@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SidebarUser from "../../components/SidebarUser";
-import "./UserQuizResultPage.css";
+import "../users/UserQuizResultPage.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { fetchQuizResult } from "../../actions/quizResultActions";
@@ -8,8 +8,9 @@ import * as quizResultConstants from "../../constants/quizResultConstants";
 import Message from "../../components/Message";
 import { Link } from "react-router-dom";
 import { Table } from "react-bootstrap";
+import Sidebar from "../../components/Sidebar";
 
-const UserQuizResultPage = () => {
+const AdminQuizResultPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -21,7 +22,7 @@ const UserQuizResultPage = () => {
 
   useEffect(() => {
     if (quizResults == null)
-      fetchQuizResult(dispatch, userId, token).then((data) => {
+      fetchQuizResult(dispatch, null, token).then((data) => {
         if (data.type === quizResultConstants.FETCH_QUIZ_RESULT_SUCCESS) {
           setQuizResults(data.payload);
         }
@@ -35,12 +36,11 @@ const UserQuizResultPage = () => {
   return (
     <div className="userQuizResultPage__container">
       <div className="userQuizResultPage__sidebar">
-        <SidebarUser />
+        <Sidebar />
       </div>
 
       <div className="userQuizResultPage__content">
-        { 
-        quizResults && quizResults.length !== 0 ? (
+        {quizResults && quizResults.length !== 0 ? (
           <Table bordered className="userQuizResultPage__content--table">
             <thead>
               <tr>
@@ -60,7 +60,7 @@ const UserQuizResultPage = () => {
                     <td>{r.quiz.title}</td>
                     <td>{r.quiz.category.title}</td>
                     <td>{r.totalObtainedMarks}</td>
-                    <td>{r.quiz.maxMarks}</td>
+                    <td>{r.quiz.numOfQuestions * 5}</td>
                     <td>{r.attemptDatetime}</td>
                   </tr>
                 </tbody>
@@ -69,7 +69,7 @@ const UserQuizResultPage = () => {
           </Table>
         ) : (
           <Message>
-            No results to display. Attemp any <Link to="/quizzes">Quiz.</Link>
+            No results to display.
           </Message>
         )}
       </div>
@@ -77,4 +77,4 @@ const UserQuizResultPage = () => {
   );
 };
 
-export default UserQuizResultPage;
+export default AdminQuizResultPage;

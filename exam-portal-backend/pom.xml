@@ -8,7 +8,7 @@
 		<version>2.7.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.lunatic</groupId>
+	<groupId>com.project</groupId>
 	<artifactId>exam-portal-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>exam-portal-backend</name>
@@ -68,6 +68,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<mainClass>com.project.examportalbackend.ExamPortalBackendApplication</mainClass>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaBars, FaUserAlt, FaRegChartBar } from "react-icons/fa";
-import { TbLayoutGrid, TbLayoutGridAdd } from "react-icons/tb";
+import { TbLayoutGrid, TbLayoutGridAdd, TbReport } from "react-icons/tb";
 import { MdQuiz, MdQueue } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
@@ -33,6 +33,11 @@ const Sidebar = ({ children }) => {
       path: "/adminAddQuiz",
       name: "Add Quiz",
       icon: <MdQueue />,
+    },
+    {
+      path: "/adminallResult",
+      name: "All Result",
+      icon: <TbReport/>,
     },
   ];
   return (

@@ -18,6 +18,7 @@ import UserQuizzesPage from "./pages/users/UserQuizzesPage";
 import UserQuizManualPage from "./pages/users/UserQuizManualPage";
 import UserQuestionsPage from "./pages/users/UserQuestionsPage";
 import UserQuizResultPage from "./pages/users/UserQuizResultPage";
+import AdminQuizResultPage from "./pages/admin/AdminQuizResultPage";
 
 const App = () => {
   return (
@@ -39,6 +40,7 @@ const App = () => {
         <Route path="/adminUpdateQuiz/:quizId" element={<AdminUpdateQuiz />} />
         <Route path="/adminQuestions" element={<AdminQuestionsPage />} />
         <Route path="/adminAddQuestion" element={<AdminAddQuestionsPage />} />
+        <Route path="/adminallResult" element={<AdminQuizResultPage />} />
         <Route
           path="/adminUpdateQuestion/:quesId"
           element={<AdminUpdateQuestionPage />}

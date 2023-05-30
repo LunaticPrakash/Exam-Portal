@@ -118,7 +118,7 @@ const AdminQuizzesPage = () => {
                               height: "35px",
                               margin: "0px 4px",
                             }}
-                          >{`Marks : ${quiz.maxMarks}`}</div>
+                          >{`Marks : ${quiz.numOfQuestions * 5}`}</div>
                           <div
                             style={{
                               border: "1px solid grey",
@@ -129,7 +129,7 @@ const AdminQuizzesPage = () => {
                               height: "35px",
                               margin: "0px 4px",
                             }}
-                          >{`${quiz.numberOfQuestions} Questions`}</div>
+                          >{`${quiz.numOfQuestions} Questions`}</div>
                           <div
                             onClick={() =>
                               updateQuizHandler(quiz.title, quiz.quizId)

@@ -75,7 +75,7 @@ const UserQuizzesPage = () => {
                             onClick={() =>
                               navigate(`/quizManual?quizId=${q.quizId}`)
                             }
-                            style={{}}
+                            style={{cursor: "pointer"}}
                           >
                             {`Start`}
                           </div>
@@ -84,19 +84,19 @@ const UserQuizzesPage = () => {
                             className="userQuizzesPage__content--Button"
                             onClick={() => console.log("View")}
                             style={{ color: "black", backgroundColor: "white" }}
-                          >{`20 Minutes`}</div>
+                          >{`${q.numOfQuestions * 2} Minutes`}</div>
 
                           <div
                             className="userQuizzesPage__content--Button"
                             onClick={() => console.log("View")}
                             style={{ color: "black", backgroundColor: "white" }}
-                          >{`${q.numberOfQuestions} Questions`}</div>
+                          >{`${q.numOfQuestions} Questions`}</div>
 
                           <div
                             className="userQuizzesPage__content--Button"
                             onClick={() => console.log("View")}
                             style={{ color: "black", backgroundColor: "white" }}
-                          >{`Marks : ${q.maxMarks}`}</div>
+                          >{`Marks : ${q.numOfQuestions * 5}`}</div>
                         </div>
                       </Card.Body>
                     </Card>

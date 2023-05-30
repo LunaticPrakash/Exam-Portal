@@ -32,7 +32,8 @@ const UserQuestionsPage = () => {
   const token = JSON.parse(localStorage.getItem("jwtToken"));
   const user = JSON.parse(localStorage.getItem("user"));
   const userId = user ? user.userId : null;
-  const [timeRemaining, setTimeRemaining] = useState(questions.length * 1 * 60);
+  const [timeRemaining, setTimeRemaining] = useState(questions.length * 2 * 60);
+  console.log("timeRemaining ", timeRemaining);
   let answers = {};
   let intervalId = null;
 
@@ -122,7 +123,7 @@ const UserQuestionsPage = () => {
   useEffect(() => {
     fetchQuestionsByQuiz(dispatch, quizId, token).then((data) => {
       setQuestions(data.payload);
-      setTimeRemaining(data.payload.length * 1 * 60);
+      setTimeRemaining(data.payload.length * 2 * 60);
     });
   }, []);
 

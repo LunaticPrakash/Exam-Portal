@@ -63,16 +63,16 @@ const UserQuizManualPage = () => {
             <ul>
               <li>This quiz is only for practice purpose.</li>
               <li>
-                You have to submit quiz within <strong>20 minutes</strong>.
+                You have to submit quiz within <strong>{quiz.numOfQuestions * 2}</strong>.
               </li>
               <li>You can attempt the quiz any number of time.</li>
               <li>
-                There are <strong>{quiz.numberOfQuestions} questions</strong> in
+                There are <strong>{quiz.numOfQuestions} questions</strong> in
                 this quiz.
               </li>
               <li>This quiz is only for practice purpose.</li>
               <li>
-                Total Marks for this quiz is <strong>{quiz.maxMarks}.</strong>
+                Total Marks for this quiz is <strong>{quiz.numOfQuestions * 5}.</strong>
               </li>
               <li>All question is of MCQ type.</li>
             </ul>

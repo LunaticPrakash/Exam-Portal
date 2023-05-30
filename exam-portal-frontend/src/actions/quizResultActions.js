@@ -37,3 +37,4 @@ export const fetchQuizResult = async (dispatch, userId, token) => {
     });
   }
 };
+

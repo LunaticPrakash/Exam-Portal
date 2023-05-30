@@ -26,12 +26,21 @@ const fetchQuizResult = async (userId, token) => {
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
-    const { data } = await axios.get(
-      `/api/quizResult/?userId=${userId}`,
-      config
-    );
+    let data = null;
+    if (userId) {
+      data = await axios.get(
+        `/api/quizResult/?userId=${userId}`,
+        config
+      );
+    }
+    else {
+      data = await axios.get(
+        `/api/quizResult/all`,
+        config
+      );
+    }
     console.log("quizResultServices:fetchQuizResult() Success: ", data);
-    return data;
+    return data.data;
   } catch (error) {
     console.error(
       "quizResultServices:fetchQuizResult() Error: ",
@@ -40,6 +49,7 @@ const fetchQuizResult = async (userId, token) => {
     return null;
   }
 };
+
 
 const quizResultServices = { submitQuiz, fetchQuizResult };
 
